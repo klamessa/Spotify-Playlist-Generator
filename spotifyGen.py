@@ -48,11 +48,11 @@ def generate_playlist():
         print("Try Again")
 
 # Function to get the top tracks of an artist
-def get_artist_top_tracks(artist_id):
+def get_artist_top_tracks(artist_id, num_tracks=3):
     tracks = []
     results = sp.artist_top_tracks(artist_id)
     artist_name = results['tracks'][0]['artists'][0]['name']
-    for track in results['tracks'][:3]:
+    for track in results['tracks'][:num_tracks]:
         tracks.append(track['name'])
     return {artist_name: tracks}
 
