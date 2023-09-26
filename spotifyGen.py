@@ -47,6 +47,10 @@ def generate_playlist():
         print("No tracks found for the provided artist names.")
         print("Try Again")
 
+     num_tracks = int(input("Enter the number of tracks per artist (default is 3): ") or 3)
+     tracks = get_artist_top_tracks(artist_id, num_tracks)
+
+
 # Function to get the top tracks of an artist
 def get_artist_top_tracks(artist_id):
     tracks = []
